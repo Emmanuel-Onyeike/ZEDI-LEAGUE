@@ -5,14 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header with Circular Logo</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
 <header>
     <div class="logo-container">
-        <img src="your-logo-url.png" alt="Logo" class="logo">
+        <img src="IMG_6584.PNG" alt="Logo" class="logo">
     </div>
+
+    <a href="#" class="notification-icon"id="bell-icon">
+        <i class="fas fa-bell"></i>
+    </a>
 </header>
+
+<div id="notification-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="close-btn">&times;</span>
+        <h2>Sports News and Updates</h2>
+        <div class="modal-body">
+            <ul>
+                <li><strong>Local Football Match:</strong> City team vs. Rivals on 30th Dec at 7 PM</li>
+                <li><strong>Basketball Tournament:</strong> Finals happening this weekend</li>
+                <li><strong>Baseball Game:</strong> Local team looking for players. Sign up now!</li>
+                <li><strong>Marathon Event:</strong> 10K charity marathon registration open.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>
