@@ -436,3 +436,6 @@ ul {
 .club-container::-webkit-scrollbar-thumb:hover {
     background-color: #555; /* Scrollbar thumb hover color */
 }
+a {
+    text-decoration: none;
+}
