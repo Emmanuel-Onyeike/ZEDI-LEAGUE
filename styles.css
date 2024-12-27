@@ -49,12 +49,31 @@ nav li:hover {
     justify-content: space-between;
 }
 .title h1 {
-    margin-right: 102px;
-    margin-bottom: 240px;
-    color: #FFFFFF;
-    font-size: 64px;
-    margin-left: 156px;
-    width: 50%;
+    margin-left: 20px;  /* Adjusted margin */
+    margin-right: 60px; /* Adjusted margin */
+    margin-bottom: 40px; /* Reduced bottom margin */
+    color: #FFFFFF; /* White color for the text */
+    font-size: 72px; /* Larger font for emphasis */
+    font-family: 'Montserrat', sans-serif; /* Modern, bold font */
+    font-weight: 900; /* Extra bold */
+    text-align: center; /* Center the title text */
+    line-height: 1.2; /* Adjusted line height for better spacing */
+    width: 100%; /* Full width */
+    letter-spacing: 4px; /* Increased letter spacing */
+    text-transform: uppercase; /* Uppercase text */
+    background: linear-gradient(135deg, #ff6a00, #ee0979); /* Bright, eye-catching gradient */
+    -webkit-background-clip: text; /* Apply gradient to text */
+    color: transparent; /* Make text transparent so gradient shows */
+    padding: 10px 20px; /* Padding inside the title */
+  
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover effect for the title */
+.title h1:hover {
+    transform: scale(1.05); /* Slightly enlarge title on hover */
+    color: #FFFFFF; /* Text color becomes white on hover */
 }
 .button-arrow {
     background-color: #E02C6D;
@@ -84,69 +103,55 @@ nav li:hover {
     transition: .5s ease-out;
 }
 
-/*<-- ------------------------------------
-||  style of Players Container Section  ||
------------------------------------------->*/
-.Players-container {
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 70px;
+/* Section Styling */
+.section-1 {
+    background-color: #f4f4f4; /* Light gray background for the section */
+    padding: 40px; /* Add padding around the content */
+    border-radius: 10px; /* Rounded corners for the section */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin: 30px 0; /* Space between sections */
 }
 
-.players {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 90px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-.player {
-    background-color: white;
-    border: 2px solid white;
-    width: 330px;
-    height: 474px;
-    text-align: left;
-    margin-top: 50px;
-    box-shadow: 3px 3px 10px rgb(173, 173, 173);
-}
-.player-image img {
-    margin: 15px 15px 0 15px;
-    width: 300px;
-    height: 256px;
-}
-.player-info {
-    margin-left: 15px;
+/* Header Styling */
+/* Header Styling */
+.section-heading {
+    font-size: 48px; /* Larger size for greater emphasis */
+    color: #222; /* Darker shade for text for better contrast */
+    font-family: 'Montserrat', sans-serif; /* Modern, clean font */
+    font-weight: 900; /* Extra bold font for a stronger presence */
+    text-align: center; /* Centered header */
+    margin-bottom: 20px; /* Space below the header */
+    text-transform: uppercase; /* Uppercase text for added impact */
+    letter-spacing: 4px; /* Slight letter spacing for style */
+    background: linear-gradient(135deg, #ff6a00, #ee0979); /* Vibrant gradient background */
+    -webkit-background-clip: text; /* Apply gradient only to the text */
+    color: transparent; /* Make the text transparent so the gradient shows */
+    padding: 10px 0; /* Add some vertical padding */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth animation on hover */
 }
 
-/*<-- ------------------------------------
-||  style of Highlights Section          ||
------------------------------------------->*/
-.highlights {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+/* Hover effect for the header */
+.section-heading:hover {
+    transform: scale(1.05); /* Slightly enlarge the text on hover */
+    color: #2380eb; /* Turn text to white on hover */
 }
-.highlights-title {
-    width: 50%;
-    margin-left: 150px;
-    margin-top: 200px;
-    font-size: 38px;
-    font-weight: 700;
+
+/* Paragraph Styling */
+/* Section Description Styling */
+.section-description {
+    font-size: 18px; /* Size of the text */
+    color: #333; /* Dark color for readability */
+    line-height: 1.6; /* Increased line height for better readability */
+    font-family: 'Arial', sans-serif; /* Simple sans-serif font */
+    text-align: justify; /* Justified text alignment */
+    font-style: italic; /* Make the text italic for slanted effect */
+    transform: skewX(-8deg); /* Skew the text slightly on the X-axis */
+    margin-top: 20px; /* Space above the paragraph */
+    margin-bottom: 20px; /* Space below the paragraph */
 }
-.highlights-image {
-    width: 50%;
-    margin-top: 224px;
-}
-.highlights-image img {
-    width: 730px;
-    height: 480px;
-}
-.highlights-text {
-    font-size: 16px;
-    font-weight: normal;
-}
+
+
 
 /*<-- ------------------------------------
 ||  style of Footer Section          ||
@@ -208,28 +213,8 @@ nav li:hover {
         font-size: 14px;
     }
 
-    .players {
-        grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 30px;
-    }
+   
 
-    .player {
-        width: 100%;
-        margin-top: 30px;
-    }
-
-    .highlights-title {
-        width: 100%;
-        margin-left: 0;
-        margin-top: 20px;
-        font-size: 28px;
-        text-align: center;
-    }
-
-    .highlights-image img {
-        width: 100%;
-        height: auto;
-    }
 
     .footer-contents img {
         width: 80%;
@@ -266,29 +251,9 @@ nav li:hover {
         height: auto;
     }
 
-    .players {
-        grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 40px;
-    }
+   
 
-    .player {
-        width: 100%;
-        margin-top: 40px;
-    }
-
-    .highlights-title {
-        width: 100%;
-        margin-left: 0;
-        margin-top: 20px;
-        font-size: 32px;
-        text-align: center;
-    }
-
-    .highlights-image img {
-        width: 100%;
-        height: auto;
-    }
-
+    
     .footer-contents img {
         width: 70%;
         height: auto;
@@ -315,10 +280,7 @@ nav li:hover {
         font-size: 56px;
     }
 
-    .players {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
+  
     .footer-contents img {
         width: 60%;
     }
@@ -328,3 +290,190 @@ nav li:hover {
     }
 }
 
+.star-rating {
+    display: flex;
+    justify-content: center; /* Center the stars */
+    gap: 10px; /* Space between the stars */
+    margin-top: 20px; /* Space above the stars */
+}
+
+.star {
+    color: gold; /* Gold color for the stars */
+    font-size: 30px; /* Size of the stars */
+}
+/* Section 2 Styling */
+.section-2 {
+    display: flex; /* Use flexbox to arrange content side by side */
+    justify-content: space-between; /* Space out the content */
+    align-items: center; /* Vertically center the items */
+    padding: 40px; /* Add padding around the section */
+    background-color: #f4f4f4; /* Light gray background */
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin-top: 30px; /* Space from the previous section */
+}
+
+/* Left Content (Text) */
+.content-left {
+    width: 50%; /* Take up 50% of the width */
+}
+
+.section-description {
+    font-size: 18px; /* Font size for the paragraph */
+    color: #333; /* Dark color for readability */
+    line-height: 1.6; /* Increased line height for readability */
+    font-family: 'Arial', sans-serif; /* Simple sans-serif font */
+    text-align: left; /* Align text to the left */
+}
+
+/* Right Content (Image) */
+.content-right {
+    width: 50%; /* Take up 50% of the width */
+    display: flex; /* Flex to align the image */
+    justify-content: center; /* Center the image */
+}
+
+.content-right img {
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: rounded corners for the image */
+}
+/* Section 3 Styling */
+.section-3 {
+    padding: 40px; /* Padding around the section */
+    background-color: #f4f4f4; /* Light background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin-top: 30px; /* Space between sections */
+}
+
+/* Flex container for the items */
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allow the items to wrap into multiple rows */
+    justify-content: space-between; /* Distribute space evenly between items */
+    gap: 20px; /* Space between items */
+}
+
+/* Each item container */
+.item {
+    width: 18%; /* Each container will take up 18% of the width, making 5 items fit in one row */
+    background-color: #fff; /* White background for each item */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    overflow: hidden; /* Prevents any content from overflowing the container */
+    text-align: center; /* Center-align the text and image */
+    padding: 20px; /* Padding around the content */
+}
+
+/* Styling for images */
+.item img {
+    width: 100%; /* Make the image take up the full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for the image */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+/* Write-up text styling */
+.write-up {
+    font-size: 16px; /* Font size for the text */
+    color: #333; /* Dark color for readability */
+    line-height: 1.5; /* Line height for readability */
+    font-family: 'Arial', sans-serif; /* Simple font */
+    text-align: center; /* Center-align the text */
+}
+/* Section 4 Styling */
+.section-4 {
+    position: relative;
+    padding: 100px;
+    background-color: #222; /* Dark background color */
+    text-align: center;
+}
+
+/* Container for the animation */
+.animation-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Styling for the text */
+.animated-text {
+    font-size: 80px;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    opacity: 0; /* Make text initially invisible */
+    animation: spell-out 4s forwards, spark-effect 4s 4s forwards; /* Run the spell-out and spark effect */
+}
+
+/* Keyframes to animate text spelling out from different parts */
+@keyframes spell-out {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    25% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    75% {
+        opacity: 1;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+/* Spark effect in the background */
+@keyframes spark-effect {
+    0% {
+        opacity: 0;
+        background: transparent;
+    }
+    50% {
+        opacity: 1;
+        background: radial-gradient(circle, rgba(255, 215, 0, 1) 0%, rgba(255, 0, 0, 0.6) 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    100% {
+        opacity: 0;
+        background: transparent;
+    }
+}
+
+/* Additional styling for the spark effect */
+.spark-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+}
+
+/* To make the animation loop */
+.section-4 .animation-container {
+    animation: loop 8s infinite;
+}
+
+/* Keyframes to make the animation repeat */
+@keyframes loop {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
