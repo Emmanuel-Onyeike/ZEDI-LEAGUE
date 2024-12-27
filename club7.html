@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Club</title>
+    <link rel="stylesheet" href="club7.css">
+    <!-- Add Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section (Player List) -->
+        <div class="left-section">
+            <h2>Players</h2>
+            <ul id="playerList">
+                <!-- Sample list of players -->
+                <li onclick="showPlayerDetails('Player 1')">Player 1<i class="fas fa-crown captain-icon"></i></li>
+                <li onclick="showPlayerDetails('Player 2')">Player 2</li>
+                <li onclick="showPlayerDetails('Player 3')">Player 3    </li>
+
+                <li onclick="showPlayerDetails('Player 4')">Player 4</li>
+                <li onclick="showPlayerDetails('Player 5')">player 5</li>
+                <li onclick="showPlayerDetails('Player 6')">Player 6</li>
+                <li onclick="showPlayerDetails('Player 7')">Player 7
+                </li>
+                <li onclick="showPlayerDetails('Player 8')">Player 8</li>
+                <li onclick="showPlayerDetails('Player 9')">Player 9   </li>
+                <li onclick="showPlayerDetails('Player 10')">Player 10</li>
+                <li onclick="showPlayerDetails('Player 11')">Player 11</li>
+                <li onclick="showPlayerDetails('Player 12')">Player 12</li>
+                <li onclick="showPlayerDetails('Player 13')">Player 13</li>
+            </ul>
+        </div>
+
+        <!-- Right Section (Player Details) -->
+        <div class="right-section" id="playerDetails">
+            <h2>Player Info</h2>
+            <li onclick="showPlayerDetails('Player 1')"></li>
+            <div id="playerImage" class="player-image"></div>
+        </li>
+            <div id="playerStats" class="player-stats">
+                <p><strong>Passing:</strong> <span id="passing"></span></p>
+                <p><strong>Shooting:</strong> <span id="shooting"></span></p>
+                <p><strong>Speed:</strong> <span id="speed"></span></p>
+                <p><strong>Defense:</strong> <span id="defense"></span></p>
+                <p><strong>Stamina:</strong> <span id="stamina"></span></p>
+                <p><strong>Strength:</strong> <span id="strength"></span></p>
+            </div>
+            <div id="playerRating" class="rating-bar">
+                <span>Player Rating:</span>
+                <div id="ratingBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="club7.js"></script>
+</body>
+</html>
