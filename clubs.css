@@ -1,0 +1,103 @@
+/* General body styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #1e2a47;
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Club container styling */
+.club-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    background: #2c3e50;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    margin-top: 20px; /* Adds top margin for spacing on mobile */
+}
+
+/* Each club item styling */
+.club-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #34495e;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+/* Hover effect */
+.club-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Club logo styling */
+.club-logo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Logo hover effect */
+.club-logo img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Club information styling */
+.club-info {
+    flex-grow: 1;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.club-info h3 {
+    font-size: 1.4rem;
+    margin: 0;
+    color: #ecf0f1;
+    font-weight: 600;
+}
+
+.club-info .coach-name {
+    font-size: 1rem;
+    color: #bdc3c7;
+    font-weight: 400;
+    margin-top: 8px;
+}
+
+/* Responsive Design for Mobile */
+@media only screen and (max-width: 768px) {
+    .club-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .club-logo img {
+        margin-bottom: 15px;
+    }
+
+    .club-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .club-info .coach-name {
+        font-size: 0.9rem;
+    }
+}
