@@ -1,0 +1,256 @@
+/* General reset for body */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fa;  /* Lighter, soothing background */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container for left and right sections */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    gap: 30px;
+}
+
+/* Left Section - Player list */
+.left-section {
+    width: 30%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #dde2e8; /* Soft border */
+}
+
+/* Left Section Header Styling */
+.left-section h2 {
+    text-align: center;
+    font-size: 2.2em; /* Larger font size for better visibility */
+    color: #005f77;  /* Deep blue color for header */
+    margin-bottom: 25px;
+    font-weight: 700;  /* Bolder weight for more impact */
+    letter-spacing: 1.5px; /* Slightly increased letter-spacing for better readability */
+    text-transform: uppercase; /* Transform text to uppercase for a strong header effect */
+    position: relative;
+}
+
+.left-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background-color: #f5a623;  /* Orange accent for the underline */
+    border-radius: 5px;
+}
+
+/* Player List Styling */
+.left-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left-section li {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #555;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.left-section li:hover {
+    background-color: #eaeaea;
+    transform: scale(1.02);
+}
+
+/* Right Section - Player details */
+.right-section {
+    width: 65%;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Right Section Header Styling */
+.right-section h2 {
+    text-align: center;
+    font-size: 2.2em; /* Larger font size for emphasis */
+    color: #005f77;  /* Deep blue color for header */
+    margin-bottom: 25px;  /* Increased margin for better spacing */
+    font-weight: 700;  /* Bolder font weight for visual importance */
+    letter-spacing: 1.5px;  /* Wider letter-spacing for a modern, clean look */
+    text-transform: uppercase;  /* Uppercase for consistency and strength */
+    position: relative;
+}
+
+.right-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;  /* A little lower for a more pronounced effect */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;  /* Width of the underline */
+    height: 3px;  /* Thickness of the underline */
+    background-color: #f5a623;  /* Bright orange accent color */
+    border-radius: 5px;  /* Rounded edges for the underline */
+}
+
+
+/* Player Image Styling */
+.player-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: #ccc;
+    margin-bottom: 25px;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Player Stats Styling */
+.player-stats {
+    font-size: 1.2em;
+    color: #444;
+    margin-top: 15px;
+}
+
+.player-stats p {
+    margin: 12px 0;
+}
+
+.player-stats strong {
+    color: #005f77;  /* Matching accent color */
+    font-weight: 600;
+}
+
+/* Adding icons for stats */
+.player-stats i {
+    color: #005f77;
+    margin-right: 8px;
+}
+
+/* Rating Bar */
+.rating-bar {
+    margin-top: 25px;
+    text-align: center;
+}
+
+#ratingBar {
+    height: 20px;
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 12px;
+    margin-top: 8px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#ratingBar div {
+    height: 100%;
+    width: 0%;
+    border-radius: 12px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Media Queries for Mobile Responsiveness */
+
+/* For screens less than or equal to 768px (Tablets and small laptops) */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-section,
+    .right-section {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .left-section h2,
+    .right-section h2 {
+        font-size: 1.5em;
+    }
+
+    .left-section li {
+        font-size: 1.1em;
+    }
+
+    .player-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .player-stats p {
+        font-size: 1.1em;
+    }
+
+    #ratingBar {
+        height: 18px;
+    }
+}
+
+/* For screens less than or equal to 480px (Small mobile phones) */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .left-section {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .right-section {
+        width: 100%;
+    }
+
+    .left-section li {
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    .player-stats p {
+        font-size: 1em;
+    }
+
+    .player-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    #ratingBar {
+        height: 15px;
+    }
+}
+.captain-icon {
+    color: gold;
+    margin-left: 10px;
+    font-size: 1.5em; /* Larger size for better visibility */
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block; /* Ensure the icon stays aligned with the text */
+    vertical-align: middle; /* Align icon in the center of the text */
+    box-shadow: 0 0 10px rgba(255, 223, 0, 0.6); /* Add a soft glow effect around the icon */
+    padding: 2px; /* Adds space inside the icon for a glowing effect */
+    border-radius: 50%; /* Rounded corners around the icon for a more modern feel */
+}
+
+/* Hover effect to emphasize the captain icon */
+.captain-icon:hover {
+    transform: scale(1.2); /* Slight zoom-in effect */
+    color: #f1c40f; /* Slightly brighter gold color on hover */
+    box-shadow: 0 0 15px rgba(255, 223, 0, 1); /* Glowing effect on hover */
+}
