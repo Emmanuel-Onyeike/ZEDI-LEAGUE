@@ -1,164 +1,330 @@
-/* General reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* fonts style */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
+/*--------- Common Style-------- */
 body {
-    font-family: Arial, sans-serif;
-    background-color: white; /* Light background color */
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Styling for the header */
-header {
-    background-color: transparent; /* White background for a clean look */
-    padding: 20px 40px; /* Padding for spacing */
+/*<-- ----------------------
+||  style of Nav bar  ||
+---------------------------->*/
+nav > ul {
+    display: flex;
+    margin-left: 100px;
+}
+.nav-bar {
+    padding-top: 1px;
+}
+nav > ul > li:hover > ul {
+    display: block;
+}
+nav li {
+    list-style: none;
+    margin-right: 50px;
+    padding: 3px 9px 3px 9px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+nav li a {
+    text-decoration: none;
+    color: white;
+}
+nav li:hover {
+    background-color: gray;
+}
+
+/*<-- ----------------------
+||  style of Banner Section  ||
+---------------------------->*/
+.menu-and-banner {
+    background-color: #2D25A0;
+    width: 100%;
+    height: 650px;
+}
+
+.banner-elements {
     display: flex;
     align-items: center;
     justify-content: space-between;
-   
 }
-
-/* Styling for the logo container */
-.logo-container {
-    width: 100px; /* Adjust the size of the circular container */
-    height: 100px; /* Keep it square for a perfect circle */
-    border-radius: 50%; /* Makes the container circular */
-    background: linear-gradient(145deg, #0aa2e8, #ff6347); /* Gradient background for a modern touch */
-    padding: 10px; /* Padding between the logo and the background color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease-in-out; /* Smooth hover transition */
+.title h1 {
+    margin-right: 102px;
+    margin-bottom: 240px;
+    color: #FFFFFF;
+    font-size: 64px;
+    margin-left: 156px;
+    width: 50%;
 }
-
-.logo-container:hover {
-    transform: scale(1.1); /* Slight zoom effect when hovered */
-}
-.notification-icon {
-    font-size: 24px; /* Size of the bell icon */
-    color: #333; /* Dark color for the icon */
-    text-decoration: none; /* Remove underline from the link */
-    position: relative; /* Allows us to position the notification badge */
-    transition: color 0.3s ease; /* Smooth color transition */
-}
-.notification-icon:hover {
-    color: #ff6347; /* Change color on hover */
-}
-.notification-icon::after {
-    content: "5"; /* Number of notifications (adjust as needed) */
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: red; /* Badge color */
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%; /* Circular badge */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/* Styling for the logo image */
-.logo {
-    width: 80px; /* Logo size */
-    height: 80px; /* Logo size */
-    border-radius: 50%; /* Makes the logo circular */
-    object-fit: cover; /* Ensures the logo scales well inside the circle */
-    border: 3px solid #ffffff; /* Adds a white border around the logo for a clean look */
-}
-
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1; /* Sit on top of everything */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.4); /* Background color with transparency */
-}
-
-/* Modal Content */
-.modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Modal width */
-    max-width: 500px; /* Max width */
-    border-radius: 8px; /* Rounded corners */
-}
-
-/* Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-}
-
-/* Modal Body */
-.modal-body {
+.button-arrow {
+    background-color: #E02C6D;
+    padding: 10px 24px;
     font-size: 16px;
-    line-height: 1.5;
+    width: 168px;
+    height: 44px;
+    border: none;
+}
+.banner-image {
+    width: 50%;
+}
+.banner-image img {
+    align-items: center;
+    margin-left: 200px;
+    margin-bottom: 100px;
+    margin-right: 10px;
+    width: 560px;
+    height: 440px;
+}
+.banner-image:hover img {
+    transform: scale(1.2) rotate(360deg);
+    transition: 1.5s ease-in-out;
+}
+.button-arrow:hover {
+    transform: scale(1.3);
+    transition: .5s ease-out;
 }
 
-.modal-body ul {
-    list-style-type: none;
+/*<-- ------------------------------------
+||  style of Players Container Section  ||
+------------------------------------------>*/
+.Players-container {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 70px;
 }
 
-.modal-body li {
-    margin-bottom: 10px;
+.players {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 90px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.player {
+    background-color: white;
+    border: 2px solid white;
+    width: 330px;
+    height: 474px;
+    text-align: left;
+    margin-top: 50px;
+    box-shadow: 3px 3px 10px rgb(173, 173, 173);
+}
+.player-image img {
+    margin: 15px 15px 0 15px;
+    width: 300px;
+    height: 256px;
+}
+.player-info {
+    margin-left: 15px;
 }
 
-@media screen and (max-width: 768px) {
-    header {
-        padding: 15px 25px; /* Reduce padding on smaller screens */
-        justify-content: left; /* Center logo on small screens */
+/*<-- ------------------------------------
+||  style of Highlights Section          ||
+------------------------------------------>*/
+.highlights {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.highlights-title {
+    width: 50%;
+    margin-left: 150px;
+    margin-top: 200px;
+    font-size: 38px;
+    font-weight: 700;
+}
+.highlights-image {
+    width: 50%;
+    margin-top: 224px;
+}
+.highlights-image img {
+    width: 730px;
+    height: 480px;
+}
+.highlights-text {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/*<-- ------------------------------------
+||  style of Footer Section          ||
+------------------------------------------>*/
+.footer-contents {
+    margin-top: 150px;
+    color: black;
+    text-align: center;
+    width: 100%;
+}
+.footer-contents img {
+    width: 483.87px;
+    height: 110px;
+    margin-bottom: -40px;
+}
+.footer-font-awesomes i {
+    margin: 10px;
+}
+.footer-text {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Media Queries for Mobile Devices
+-------------------------------------- */
+
+/* Mobile Devices (Small screens) */
+@media only screen and (max-width: 480px) {
+    nav > ul {
+        flex-direction: column;
+        margin-left: 0;
     }
 
-    .logo-container {
-        width: 80px; /* Smaller size for logo container on mobile */
-        height: 80px; /* Keep it square for a perfect circle */
+    .menu-and-banner {
+        height: 500px;
     }
 
-    .logo {
-        width: 70px; /* Adjust logo size for mobile */
-        height: 70px; /* Adjust logo size for mobile */
+    .banner-elements {
+        flex-direction: column;
+        align-items: center;
     }
-    .notification-icon {
-        font-size: 20px; /* Smaller bell icon on mobile */
+
+    .title h1 {
+        margin-left: 0;
+        font-size: 32px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .banner-image img {
+        margin-left: 0;
+        width: 90%;
+        height: auto;
+    }
+
+    .button-arrow {
+        width: auto;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .players {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 30px;
+    }
+
+    .player {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .highlights-title {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .highlights-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-contents img {
+        width: 80%;
+        height: auto;
+        margin-bottom: 0;
+    }
+
+    .footer-text {
+        font-size: 14px;
     }
 }
 
-@media screen and (max-width: 480px) {
-    header {
-        padding: 10px 20px; /* Further reduce padding on very small screens */
+/* Tablets and Medium Devices */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .menu-and-banner {
+        height: 600px;
     }
 
-    .logo-container {
-        width: 70px; /* Even smaller logo container */
-        height: 70px; /* Keep it square for a perfect circle */
+    .banner-elements {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .logo {
-        width: 60px; /* Adjust logo size for very small screens */
-        height: 60px; /* Adjust logo size for very small screens */
+    .title h1 {
+        margin-left: 0;
+        font-size: 48px;
+        margin-bottom: 20px;
+        text-align: center;
     }
-    .notification-icon {
-        font-size: 18px; /* Even smaller bell icon on very small screens */
+
+    .banner-image img {
+        margin-left: 0;
+        width: 90%;
+        height: auto;
+    }
+
+    .players {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 40px;
+    }
+
+    .player {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .highlights-title {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .highlights-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-contents img {
+        width: 70%;
+        height: auto;
+        margin-bottom: 0;
+    }
+
+    .footer-text {
+        font-size: 14px;
     }
 }
+
+/* Small Tablets or Larger Mobile Screens */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    .menu-and-banner {
+        height: 650px;
+    }
+
+    .banner-elements {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .title h1 {
+        font-size: 56px;
+    }
+
+    .players {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-contents img {
+        width: 60%;
+    }
+
+    .footer-text {
+        font-size: 16px;
+    }
+}
+
