@@ -30,11 +30,25 @@ body {
 /* Left Section Header Styling */
 .left-section h2 {
     text-align: center;
-    font-size: 1.8em;
+    font-size: 2.2em; /* Larger font size for better visibility */
     color: #005f77;  /* Deep blue color for header */
-    margin-bottom: 20px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    margin-bottom: 25px;
+    font-weight: 700;  /* Bolder weight for more impact */
+    letter-spacing: 1.5px; /* Slightly increased letter-spacing for better readability */
+    text-transform: uppercase; /* Transform text to uppercase for a strong header effect */
+    position: relative;
+}
+
+.left-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background-color: #f5a623;  /* Orange accent for the underline */
+    border-radius: 5px;
 }
 
 /* Player List Styling */
@@ -73,12 +87,27 @@ body {
 /* Right Section Header Styling */
 .right-section h2 {
     text-align: center;
-    font-size: 1.8em;
+    font-size: 2.2em; /* Larger font size for emphasis */
     color: #005f77;  /* Deep blue color for header */
-    margin-bottom: 20px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    margin-bottom: 25px;  /* Increased margin for better spacing */
+    font-weight: 700;  /* Bolder font weight for visual importance */
+    letter-spacing: 1.5px;  /* Wider letter-spacing for a modern, clean look */
+    text-transform: uppercase;  /* Uppercase for consistency and strength */
+    position: relative;
 }
+
+.right-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;  /* A little lower for a more pronounced effect */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;  /* Width of the underline */
+    height: 3px;  /* Thickness of the underline */
+    background-color: #f5a623;  /* Bright orange accent color */
+    border-radius: 5px;  /* Rounded edges for the underline */
+}
+
 
 /* Player Image Styling */
 .player-image {
