@@ -9,6 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 /* Club container styling */
@@ -22,7 +23,7 @@ body {
     background: #2c3e50;
     border-radius: 15px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    margin-top: 20px; /* Adds top margin for spacing on mobile */
+    margin-top: 20px;
 }
 
 /* Each club item styling */
@@ -35,69 +36,93 @@ body {
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
-/* Hover effect */
 .club-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
 }
 
-/* Club logo styling */
+/* Club logo image styling */
 .club-logo img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
     object-fit: cover;
-    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Logo hover effect */
-.club-logo img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
-}
-
-/* Club information styling */
+/* Club info section styling */
 .club-info {
     flex-grow: 1;
     margin-left: 20px;
-    text-align: left;
 }
 
-.club-info h3 {
-    font-size: 1.4rem;
+.club-info p {
     margin: 0;
-    color: #ecf0f1;
-    font-weight: 600;
+    font-size: 18px;
+    color: #f1f1f1;
 }
 
-.club-info .coach-name {
-    font-size: 1rem;
+.coach-name {
+    font-size: 14px;
     color: #bdc3c7;
-    font-weight: 400;
-    margin-top: 8px;
 }
 
-/* Responsive Design for Mobile */
-@media only screen and (max-width: 768px) {
-    .club-item {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
 
-    .club-logo img {
-        margin-bottom: 15px;
-    }
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
 
-    .club-info h3 {
-        font-size: 1.3rem;
-    }
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
-    .club-info .coach-name {
-        font-size: 0.9rem;
-    }
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal title */
+h2 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+/* Player profile styling */
+h3 {
+    color: #16a085;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    list-style-type: disc;
+    margin: 8px 0;
 }
