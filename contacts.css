@@ -1,0 +1,388 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Header */
+/* Header */
+header {
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradient background */
+    padding: 50px 0;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-bottom: 5px solid #3498db; /* Bottom border for a clean finish */
+}
+
+/* Header Main Title */
+.header-container h1 {
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+    animation: fadeIn 1s ease-out; /* Animation for smooth entry */
+}
+
+/* Header Subtitle */
+.header-container p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #ecf0f1;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+/* Subtitle hover effect */
+.header-container p:hover {
+    opacity: 1;
+    color: #3498db; /* Change color on hover */
+}
+
+/* Header Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Header Styling */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 40px 20px;
+    }
+
+    .header-container h1 {
+        font-size: 36px; /* Smaller title on mobile */
+    }
+
+    .header-container p {
+        font-size: 18px; /* Smaller subtitle on mobile */
+    }
+}
+
+
+/* Main Container */
+/* Container */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+    border: 1px solid #ddd; /* Light border around the container */
+}
+
+/* Contact Introduction */
+.contact-intro {
+    text-align: center;
+    margin-bottom: 50px; /* Added more space between sections */
+}
+
+.contact-intro h2 {
+    font-size: 32px; /* Slightly larger heading */
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Adds emphasis to the title */
+    letter-spacing: 2px; /* Adds spacing for an elegant touch */
+}
+
+.contact-intro p {
+    font-size: 18px;
+    color: #7f8c8d;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6; /* Adds spacing for better readability */
+}
+
+/* Contact Form */
+.contact-form {
+    margin-bottom: 50px;
+}
+
+.form-group {
+    margin-bottom: 25px; /* More spacing between form fields */
+}
+
+.form-group label {
+    font-size: 18px; /* Increased font size for readability */
+    font-weight: 600;
+    display: block;
+    color: #34495e;
+    margin-bottom: 10px; /* Added margin to separate label from input */
+    text-transform: uppercase; /* To make labels stand out more */
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 18px;
+    margin-top: 8px;
+    font-size: 16px;
+    border: 2px solid #bdc3c7;
+    border-radius: 10px; /* Increased border-radius for smoother edges */
+    background-color: #ecf0f1;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for input fields */
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.4); /* Focused shadow for inputs */
+}
+
+.form-group textarea {
+    height: 160px; /* Slightly larger textarea */
+    resize: none;
+    background: linear-gradient(to right, #ecf0f1 0%, #f4f6f9 100%); /* Subtle gradient background */
+}
+
+/* Buttons */
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 16px 32px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px; /* Larger rounded corners */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05); /* Slight scaling on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    background-color: #1d6fa5;
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Social Links */
+.social-links {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.social-links p {
+    font-size: 20px;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    margin: 0 18px;
+    display: inline-block;
+    font-size: 32px; /* Larger icons for better visibility */
+    color: #34495e; /* Icon color */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    color: #3498db;
+}
+
+.social-icon i {
+    transition: color 0.3s ease;
+}
+
+/* Footer */
+
+
+/* Button Styling */
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transform: scale(1);
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05); /* Slight scale-up effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
+}
+
+button:active {
+    background-color: #1d6fa5; /* Darker shade when pressed */
+    transform: scale(1.02); /* Slightly compress the button when clicked */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Revert to original shadow */
+}
+
+/* Adding Animation to the Button */
+button:hover {
+    animation: pulse 0.8s infinite; /* Pulse animation on hover */
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1.05);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* Social Links */
+
+
+/* Footer */
+/* Footer */
+footer {
+    background: linear-gradient(145deg, #2c3e50, #34495e); /* Gradient background */
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 60px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Footer Text */
+footer p {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 0;
+    opacity: 0.8; /* Slight opacity for a subtle effect */
+    transition: opacity 0.3s ease;
+}
+
+/* Footer Hover Effect */
+footer:hover p {
+    opacity: 1; /* Full opacity when hovering over footer */
+}
+
+/* Footer Links (optional) */
+footer a {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 10px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #3498db; /* Change link color on hover */
+}
+
+footer .social-icons {
+    margin-top: 20px;
+}
+
+footer .social-icons a {
+    font-size: 24px; /* Larger social icons */
+    margin: 0 15px;
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #3498db; /* Color change on hover */
+    transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Add padding for mobile responsiveness */
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 30px 0;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+}
+
+/* Social Links */
+/* Social Links Container */
+.social-links {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Social Links Text */
+.social-links p {
+    font-size: 20px;
+    color: #7f8c8d;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Social Icon Styling */
+.social-icon {
+    margin: 0 20px; /* Increased spacing between icons */
+    display: inline-block;
+    font-size: 36px; /* Increased icon size */
+    color: #34495e; /* Default icon color */
+    background-color: #ecf0f1; /* Light background for the icon */
+    border-radius: 50%; /* Circular background around icons */
+    padding: 18px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow around the icon */
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Social Icon Hover Effects */
+.social-icon:hover {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+    color: #fff; /* Change icon color to white */
+    background-color: #3498db; /* Background color on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Font Awesome Icons (if using font icons) */
+.social-icon i {
+    transition: color 0.3s ease;
+}
+
+/* Social Icons for Mobile (optional) */
+@media screen and (max-width: 768px) {
+    .social-icon {
+        font-size: 30px; /* Slightly smaller icons on mobile */
+        padding: 15px; /* Smaller padding for mobile */
+    }
+
+    .social-links p {
+        font-size: 16px; /* Smaller text for mobile */
+    }
+}
