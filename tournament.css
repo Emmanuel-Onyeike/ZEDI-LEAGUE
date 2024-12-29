@@ -1,89 +1,149 @@
-/* General body styling */
+/* General Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden; /* Prevent page scrolling */
+    box-sizing: border-box;
 }
 
-/* Styling for the notification message */
+/* Notification box for countdown */
 .notification {
-    background: linear-gradient(145deg, #e0f7fa, #b2ebf2);  /* Gradient effect for the background */
-    border: 1px solid #00838f;  /* Darker blue border */
-    color: #00796b;  /* Dark green text */
-    padding: 20px;
-    border-radius: 15px;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.3em; /* Reduced font size */
+    padding: 20px; /* Reduced padding */
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    background-color: #ffffff;
+    margin-top: 50px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Heading inside notification */
+.notification strong {
+    color: #333;
     font-weight: 600;
-    width: 80%;
-    max-width: 650px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Softer, deeper shadow */
-    margin: 20px;
-    animation: fadeIn 1.5s ease-out;
+    display: block;
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+/* Countdown Timer Styling - Default for Desktop */
+.countdown {
+    font-size: 2.2em; /* Reduced font size */
+    font-weight: 700;
+    color: #4CAF50;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Reduced gap */
+}
+
+/* Styling for each countdown block for desktop */
+.countdown div {
+    padding: 15px; /* Reduced padding */
+    margin: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
     transition: transform 0.3s ease-in-out;
 }
 
-/* Add subtle hover effect to the notification */
-.notification:hover {
-    transform: scale(1.05);
+/* Hover effect for each time block (only for desktop) */
+.countdown div:hover {
+    transform: scale(1.05); /* Reduced hover scale */
 }
 
-/* Styling for the strong text */
-.notification strong {
-    color: #00796b;  /* Dark green text for emphasis */
-    font-size: 1.4em;
-    letter-spacing: 1px; /* Slight space between letters for elegance */
+.countdown span {
+    font-size: 2.5em; /* Reduced font size */
+    color: #333;
+    display: block;
+    font-weight: 600;
 }
 
-/* Add an animation effect for the fade-in */
+.countdown .label {
+    font-size: 1.1em; /* Reduced font size */
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Countdown timer label styles for desktop */
+.countdown .time {
+    font-size: 2em; /* Reduced font size */
+    color: #4CAF50;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 768px) {
+    /* Body padding and layout adjustments for mobile */
+    body {
+        padding: 10px;
+    }
+
+    /* Notification box padding and width adjustments for mobile */
+    .notification {
+        padding: 18px; /* Reduced padding */
+        margin-top: 20px;
+        width: 100%;
+        max-width: 450px;
+    }
+
+    /* Countdown timer adjustments for mobile */
+    .countdown {
+        font-size: 1.8em; /* Reduced font size */
+        flex-direction: column; /* Stack countdown blocks vertically */
+        align-items: center; /* Center elements */
+        gap: 8px; /* Reduced gap */
+    }
+
+    /* Countdown block adjustments for mobile */
+    .countdown div {
+        padding: 12px; /* Reduced padding */
+        margin: 8px 0; /* Reduced margin */
+        width: 80%; /* Set a width to ensure they don’t stretch too far */
+    }
+
+    /* Countdown text adjustments for smaller screens */
+    .countdown span {
+        font-size: 1.8em; /* Reduced font size */
+    }
+
+    .countdown .time {
+        font-size: 1.6em; /* Reduced font size */
+    }
+
+    .countdown .label {
+        font-size: 1.1em; /* Adjusted label font size */
+    }
+
+    /* Remove hover effects for mobile */
+    .countdown div:hover {
+        transform: none;
+    }
+}
+
+/* Animation for countdown timer */
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: translateY(-20px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
-/* Additional styling for text alignment */
-.notification p {
-    line-height: 1.6;
-    font-size: 1.2em;
-}
-
-/* Mobile responsiveness for smaller screens */
-@media screen and (max-width: 768px) {
-    /* For tablets and smaller screens */
-    .notification {
-        font-size: 1.2em; /* Slightly smaller font for tablets */
-        width: 90%; /* Notification takes up more width */
-        padding: 15px; /* Slightly less padding */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    /* For mobile screens */
-    .notification {
-        font-size: 1.1em; /* Smaller font size for mobile */
-        width: 90%; /* Notification takes up almost full width */
-        padding: 10px; /* Reduced padding */
-        margin: 15px; /* Reduce margin on mobile */
-    }
-
-    .notification p {
-        font-size: 1.1em; /* Slightly smaller font size for better readability */
-    }
-
-    .notification strong {
-        font-size: 1.3em; /* Adjust size of strong text for small screens */
-    }
+.notification,
+.countdown div {
+    animation: fadeIn 1s ease-in-out;
 }
