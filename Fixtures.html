@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football League Table</title>
+    <link rel="stylesheet" href="Fixtures.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ZEDI-LEAGUE TABLE</h1>
+        <table id="leagueTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">#</th>
+                    <th onclick="sortTable(1)">Team</th>
+                    <th onclick="sortTable(2)">Played</th>
+                    <th onclick="sortTable(3)">Won</th>
+                    <th onclick="sortTable(4)">Drawn</th>
+                    <th onclick="sortTable(5)">Lost</th>
+                    <th onclick="sortTable(6)">GF</th>
+                    <th onclick="sortTable(7)">GA</th>
+                    <th onclick="sortTable(8)">GD</th>
+                    <th onclick="sortTable(9)">Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically generated -->
+            </tbody>
+        </table>
+        <h2>Upcoming Fixtures</h2>
+        <div id="fixtures">
+            <!-- Fixtures content populated dynamically -->
+        </div>
+    </div>
+    </div>
+    <script src="Fixtures.js"></script>
+</body>
+</html>
