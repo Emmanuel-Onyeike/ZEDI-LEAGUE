@@ -1,0 +1,678 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: 'Roboto', sans-serif; /* More modern font */
+    background-color: #f4f4f4; /* Light background for contrast */
+    color: #333; /* Default text color */
+  }
+  
+  /* Header styles */
+  header {
+    display: flex;
+    justify-content: space-between; /* Space out left and right items */
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #222; /* Darker background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    position: relative;
+  }
+  
+  .header-text {
+    font-size: 28px; /* Larger text */
+    font-weight: 800; /* Make the font bolder and thicker */
+    color: #ffffff; /* White text */
+    letter-spacing: 1px; /* Adds spacing between letters */
+    text-transform: uppercase; /* Uppercase for emphasis */
+    line-height: 1.2; /* Improved line spacing */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Stylish modern font */
+  }
+  
+  /* Optional hover effect for the header text */
+  header:hover .header-text {
+    color: #ff6347; /* Tomato color when hovered */
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    header {
+      padding: 15px 30px; /* Reduced padding on smaller screens */
+    }
+  
+    .header-text {
+      font-size: 24px; /* Slightly smaller font for mobile */
+    }
+  }
+  .plus-icon {
+    font-size: 32px; /* Slightly larger size for emphasis */
+    color: #ffffff; /* White color for the icon */
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover and click */
+    z-index: 1; /* Ensure it's above any other elements */
+  }
+  
+  .plus-icon:before {
+    content: "+"; /* Ensure the plus icon displays properly */
+    font-size: inherit;
+    display: block;
+    text-align: center;
+  }
+  
+  /* Hover effect for the plus icon */
+  .plus-icon:hover {
+    color: #ff6347; /* Tomato color */
+    transform: scale(1.2) rotate(45deg); /* Slightly enlarge the icon and rotate it */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  }
+  
+  /* Active effect when the icon is clicked */
+  .plus-icon:active {
+    transform: scale(1.1) rotate(45deg); /* Slightly shrink and maintain rotation */
+    color: #e55347; /* Darker tomato color */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow on click */
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    header {
+      padding: 15px 30px;
+    }
+  
+    .header-text {
+      font-size: 24px;
+    }
+  
+    .plus-icon {
+      font-size: 28px;
+    }
+  }
+
+  /* Modal background */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background with higher opacity */
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  /* Modal content */
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    opacity: 0;
+    animation: modalContentFadeIn 0.6s ease-in-out forwards; /* Animation for modal content */
+  }
+  
+  /* Modal Title */
+  .modal-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  
+  /* Modal text content */
+  .modal-content p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    padding: 0 20px;
+  }
+  
+  /* Close button styles */
+  .close-btn {
+    color: #888;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .close-btn:hover {
+    color: #ff6347;
+  }
+  
+  /* Button styles inside modal */
+  .modal-content button {
+    padding: 12px 30px;
+    background-color: #ff6347; /* Vibrant button color */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal-content button:hover {
+    background-color: #e55347;
+  }
+  
+  /* Fade-in animation for modal */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Animation for modal content */
+  @keyframes modalContentFadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -60%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    header {
+      padding: 15px 30px;
+    }
+  
+    .header-text {
+      font-size: 24px;
+    }
+  
+    .plus-icon {
+      font-size: 28px;
+    }
+  
+    .modal-content {
+      padding: 30px;
+      width: 90%;
+      max-width: 400px;
+    }
+  
+    .modal-content h2 {
+      font-size: 28px;
+    }
+  
+    .modal-content p {
+      font-size: 16px;
+    }
+  
+    .modal-content button {
+      font-size: 14px;
+    }
+  }
+  .image-upload {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .image-upload input[type="file"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+  }
+  
+  /* Write-up Field */
+  .write-up {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .write-up textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  /* Sticker Button */
+  .sticker-btn {
+    margin-bottom: 20px;
+  }
+  
+  .sticker-btn button {
+    padding: 12px 30px;
+    background-color: #ff6347;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sticker-btn button:hover {
+    background-color: #e55347;
+  }
+  
+  /* Send Button */
+  .send-btn {
+    margin-bottom: 20px;
+  }
+  
+  .send-btn button {
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .send-btn button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Fade-in animation for modal */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Animation for modal content */
+  @keyframes modalContentFadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -60%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    header {
+      padding: 15px 30px;
+    }
+  
+    .header-text {
+      font-size: 24px;
+    }
+  
+    .plus-icon {
+      font-size: 28px;
+    }
+  
+    .modal-content {
+      padding: 30px;
+      width: 90%;
+      max-width: 400px;
+    }
+  
+    .modal-content h2 {
+      font-size: 28px;
+    }
+  
+    .modal-content p {
+      font-size: 16px;
+    }
+  
+    .modal-content button {
+      font-size: 14px;
+    }
+  }
+  .emoji-container {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 20px;
+    transition: max-height 0.5s ease-in-out;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    justify-items: center;
+  }
+  
+  .emoji {
+    font-size: 32px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .emoji:hover {
+    transform: scale(1.2);
+    color: #ff6347;
+  }
+  
+  /* Image Upload Field */
+  .image-upload {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .image-upload input[type="file"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+  }
+  
+  /* Write-up Field */
+  .write-up {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .write-up textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  /* Sticker Button */
+  .sticker-btn {
+    margin-bottom: 20px;
+  }
+  
+  .sticker-btn button {
+    padding: 12px 30px;
+    background-color: #ff6347;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sticker-btn button:hover {
+    background-color: #e55347;
+  }
+  
+  /* Send Button */
+  .send-btn {
+    margin-bottom: 20px;
+  }
+  
+  .send-btn button {
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .send-btn button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Fade-in animation for modal */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Animation for modal content */
+  @keyframes modalContentFadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -60%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    header {
+      padding: 15px 30px;
+    }
+  
+    .header-text {
+      font-size: 24px;
+    }
+  
+    .plus-icon {
+      font-size: 28px;
+    }
+  
+    .modal-content {
+      padding: 30px;
+      width: 90%;
+      max-width: 400px;
+    }
+  
+    .modal-content h2 {
+      font-size: 28px;
+    }
+  
+    .modal-content p {
+      font-size: 16px;
+    }
+  
+    .modal-content button {
+      font-size: 14px;
+    }
+  }
+  /* Basic styles for the modal and form */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    margin: 0 auto;
+  }
+  
+  #writeUp {
+    width: 100%;
+    height: 100px;
+    font-size: 16px;
+  }
+  
+  .image-upload {
+    margin-bottom: 15px;
+  }
+  
+  .emoji-container {
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+    transition: max-height 0.3s ease-out;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+  }
+  
+  .emoji {
+    font-size: 24px;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  #postContainer {
+    margin-top: 20px;
+    padding: 10px;
+  }
+  
+  /* Style for each post on the main page */
+  .post {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .post .post-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .post .post-image {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+  
+  .post .post-time {
+    font-size: 12px;
+    color: #888;
+  }
+  /* General styles for the posts */
+#postContainer {
+    margin-top: 20px;
+  }
+  
+  .post {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .post-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .post-image {
+    max-width: 100%; /* Make image responsive */
+    height: auto;    /* Maintain aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .post-time {
+    font-size: 12px;
+    color: gray;
+    text-align: right;
+  }
+  
+  /* Mobile-responsive styles */
+  @media (max-width: 768px) {
+    .post {
+      padding: 10px;
+    }
+  
+    .post-text {
+      font-size: 14px;
+    }
+  
+    .post-time {
+      font-size: 10px;
+    }
+  }
+  
+  /* Additional styles for the modal and other elements */
+  #myModal .modal-content {
+    width: 100%;
+    max-width: 500px;  /* Max width for modal */
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+  }
+  
+  #myModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  #myModal .close-btn {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="file"] {
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .sticker-btn {
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive design for different screen sizes */
+  @media (max-width: 480px) {
+    .post {
+      padding: 8px;
+    }
+  
+    .post-text {
+      font-size: 12px;
+    }
+  
+    .post-time {
+      font-size: 8px;
+    }
+  }
+  
