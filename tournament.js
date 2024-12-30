@@ -1,41 +1,45 @@
-// Check if the target date is already stored in localStorage
-let targetDate = new Date(localStorage.getItem("targetDate"));
+// Function to calculate tournament start date: 19 days, 3 hours, 43 minutes, 30 seconds from now
+const tournamentStartDate = new Date();
+tournamentStartDate.setDate(tournamentStartDate.getDate() + 19); // Add 19 days
+tournamentStartDate.setHours(tournamentStartDate.getHours() + 3); // Add 3 hours
+tournamentStartDate.setMinutes(tournamentStartDate.getMinutes() + 43); // Add 43 minutes
+tournamentStartDate.setSeconds(tournamentStartDate.getSeconds() + 30); // Add 30 seconds
 
-if (!targetDate) {
-    // If no target date is stored, set a new target date 20 days ahead from now
-    targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 20);
-    
-    // Store the new target date in localStorage
-    localStorage.setItem("targetDate", targetDate);
+// Save the tournament start date to localStorage if not already saved
+if (!localStorage.getItem('tournamentStartDate')) {
+    localStorage.setItem('tournamentStartDate', tournamentStartDate.getTime());
+} else {
+    // Use the saved tournament start date from localStorage
+    tournamentStartDate.setTime(localStorage.getItem('tournamentStartDate'));
 }
 
-// Function to update the countdown every second
+// Function to update the countdown
 function updateCountdown() {
-    const now = new Date();
-    const timeRemaining = targetDate - now;
+    const now = new Date().getTime();
+    const distance = tournamentStartDate - now;
 
-    if (timeRemaining <= 0) {
-        // Timer is done, display the final message
-        document.getElementById("countdownTimer").innerHTML = "The tournament has started!";
-        clearInterval(countdownInterval); // Stop the countdown
-    } else {
-        // Calculate days, hours, minutes, and seconds
-        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+    // Get the days, hours, minutes, and seconds remaining
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Display the countdown in the HTML
-        document.getElementById("days").textContent = days.toString().padStart(2, "0");
-        document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
-        document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
-        document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+    // Update the HTML with the countdown values
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+
+    // If the countdown has ended, show that the tournament has started
+    if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.querySelector(".notification p").innerHTML = "<strong>The tournament has started!</strong>";
+        document.querySelector(".countdown").style.display = "none"; // Hide countdown
     }
 }
 
-// Start the countdown
+// Update the countdown every second
 const countdownInterval = setInterval(updateCountdown, 1000);
 
-// Run the function immediately to show the timer
+// Call the function initially to set the countdown
 updateCountdown();
