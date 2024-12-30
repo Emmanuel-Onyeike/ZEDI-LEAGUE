@@ -6,35 +6,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football League Table</title>
     <link rel="stylesheet" href="Fixtures.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet"> 
 </head>
 <body>
-    <div class="container">
-        <h1>ZEDI-LEAGUE TABLE</h1>
-        <table id="leagueTable">
-            <thead>
-                <tr>
-                    <th onclick="sortTable(0)">#</th>
-                    <th onclick="sortTable(1)">Team</th>
-                    <th onclick="sortTable(2)">Played</th>
-                    <th onclick="sortTable(3)">Won</th>
-                    <th onclick="sortTable(4)">Drawn</th>
-                    <th onclick="sortTable(5)">Lost</th>
-                    <th onclick="sortTable(6)">GF</th>
-                    <th onclick="sortTable(7)">GA</th>
-                    <th onclick="sortTable(8)">GD</th>
-                    <th onclick="sortTable(9)">Points</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Rows will be dynamically generated -->
-            </tbody>
+    <div class="ptable">
+        <h1 class="headin">Standings</h1>
+        <table>
+            <tr class="col">
+                <th>#</th>
+                <th>Team</th>
+                <th>GP</th>
+                <th>W</th>
+                <th>D</th>
+                <th>L</th>
+                <th>GD</th>
+                <th>PTS</th>
+            </tr>
+            <tr class="wpos">
+                <td>1</td>
+                <td>ATLAS CITY</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr class="wpos">
+                <td>2</td>
+                <td>AVALANCE</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr class="wpos">
+                <td>3</td>
+                <td>BLAZE UNITED</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr class="wpos">
+                <td>4</td>
+                <td>GOLDEN EAGLES</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr class="pos">
+                <td>5</td>
+                <td>NOVA CITY</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr class="pos">
+                <td>6</td>
+                <td>SHADOW WOLVES</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr class="pos">
+                <td>7</td>
+                <td>SILVER STREAKS</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr class="pos">
+                <td>8</td>
+                <td>STARLIGHT STRIKERS</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr class="pos">
+                <td>9</td>
+                <td>WILDLIFE WARRIORS</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr class="pos">
+                <td>10</td>
+                <td>ZEN WARRIORS</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
         </table>
-        <h2>Upcoming Fixtures</h2>
-        <div id="fixtures">
-            <!-- Fixtures content populated dynamically -->
-        </div>
     </div>
+
+    <!-- Fixture Tree Section -->
+    <div class="fixture-section">
+        <h2></h2>
+        <div id="fixture-tree"></div>
+        <button onclick="generateFixture()">Generate Fixtures</button>
     </div>
+
+    <script>
+          const teams = [
+            "ATLAS CITY", "AVALANCE", "BLAZE UNITED", "GOLDEN EAGLES", 
+            "NOVA CITY", "SHADOW WOLVES", "SILVER STREAKS", 
+            "STARLIGHT STRIKERS", "WILDLIFE WARRIORS", "ZEN WARRIORS"
+        ];
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];  // Swap elements
+            }
+        }
+
+        function generateFixture() {
+            shuffleArray(teams);
+
+            let fixtureHTML = "<div class='round'>";
+
+            // Generate pairs for the first round (if odd teams, the last one gets a bye)
+            for (let i = 0; i < teams.length; i += 2) {
+                if (teams[i + 1]) {
+                    fixtureHTML += `<div class="match"><span class="team">${teams[i]}</span> vs <span class="team">${teams[i + 1]}</span></div>`;
+                } else {
+                    fixtureHTML += `<div class="match"><span class="team">${teams[i]}</span> gets a bye</div>`;
+                }
+            }
+
+            fixtureHTML += "</div>";
+
+            // Store fixture in localStorage
+            localStorage.setItem("fixture", fixtureHTML);
+            localStorage.setItem("fixtureGenerated", "true");
+
+            // Update button text to "Generate for Next Season"
+            document.querySelector("button").textContent = "Generate for Next Season";
+
+            // Display the fixture tree
+            document.getElementById("fixture-tree").innerHTML = fixtureHTML;
+        }
+
+        function loadFixture() {
+            const fixture = localStorage.getItem("fixture");
+            const fixtureGenerated = localStorage.getItem("fixtureGenerated");
+
+            if (fixtureGenerated === "true") {
+                document.getElementById("fixture-tree").innerHTML = fixture;
+                document.querySelector("button").textContent = "Generate for Next Season";
+            }
+        }
+
+        // Load fixture when the page is loaded
+        window.onload = loadFixture;
+    </script>
+
+
     <script src="Fixtures.js"></script>
 </body>
 </html>
